@@ -1,8 +1,8 @@
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2017
  *    Level 1
  */
-
 
 import java.awt.Component;
 import java.net.MalformedURLException;
@@ -17,42 +17,106 @@ import javax.swing.JOptionPane;
 public class PhotoQuiz {
 
 	public static void main(String[] args) throws Exception {
+		int score = 0;
 		JFrame quizWindow = new JFrame();
 		quizWindow.setVisible(true);
-                quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // This will make sure the program exits when you close the window
+		quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		String bobby = "https://vignette.wikia.nocookie.net/disney/images/8/86/Goofy-disneyscreencaps_com-1410.jpg/revision/latest?cb=20111205024104";
 
-		// 1. find an image on the internet, and put its URL in a String variable (from your browser, right click on the image, and select “Copy Image Address”)
-         
-		// 2. create a variable of type "Component" that will hold your image
+		Component bobby1;
 
-		// 3. use the "createImage()" method below to initialize your Component
+		bobby1 = createImage(bobby);
 
-		// 4. add the image to the quiz window
+		quizWindow.add(bobby1);
 
-		// 5. call the pack() method on the quiz window
+		quizWindow.pack();
 
-		// 6. ask a question that relates to the image
+		String answer1 = JOptionPane.showInputDialog("What movie is this character from?");
+		if (answer1.equalsIgnoreCase("The Goofy Movie")) {
+			System.out.println("CORRECT");
+			score = score + 1;
+		} else {
+			System.out.println("INCORRECT");
+		}
+		String answer2 = JOptionPane.showInputDialog("What is his name?");
+		if (answer2.equalsIgnoreCase("Bobby Zimuruski")) {
+			System.out.println("CORRECT");
+			score = score + 1;
+		} else {
+			System.out.println("INCORRECT");
+		}
 
-		// 7. print "CORRECT" if the user gave the right answer
+		quizWindow.remove(bobby1);
 
-		// 8. print "INCORRECT" if the answer is wrong
+		String wiggles = "https://vignette.wikia.nocookie.net/wiggles/images/2/20/TheWigglesinWiggleTime%28re-recording%29.jpg/revision/latest?cb=20120616224042";
 
-		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
+		Component wiggles1;
 
-		// 10. find another image and create it (might take more than one line of code)
+		wiggles1 = createImage(wiggles);
 
-		// 11. add the second image to the quiz window
+		quizWindow.add(wiggles1);
 
-		// 12. pack the quiz window
+		quizWindow.pack();
 
-		// 13. ask another question
+		String answer3 = JOptionPane.showInputDialog("Who is the red wiggle?");
+		if (answer3.equalsIgnoreCase("Murray")) {
+			System.out.println("CORRECT");
+			score = score + 1;
+		} else {
+			System.out.println("INCORRECT");
+		}
+		String answer4 = JOptionPane.showInputDialog("Who is the purple wiggle?");
+		if (answer4.equalsIgnoreCase("Matt")) {
+			System.out.println("CORRECT");
+			score = score + 1;
+		} else {
+			System.out.println("INCORRECT");
+		}
+		String answer5 = JOptionPane.showInputDialog("Who is the yellow wiggle?");
+		if (answer5.equalsIgnoreCase("Greg")) {
+			System.out.println("CORRECT");
+			score = score + 1;
+		} else {
+			System.out.println("INCORRECT");
+		}
+		String answer6 = JOptionPane.showInputDialog("Who is the blue wiggle?");
+		if (answer6.equalsIgnoreCase("Anthony")) {
+			System.out.println("CORRECT");
+			score = score + 1;
+		} else {
+			System.out.println("INCORRECT");
+		}
 
-		// 14+ check answer, say if correct or incorrect, etc.
+		quizWindow.remove(wiggles1);
+
+		String jeff = "http://bloody-disgusting.com/wp-content/uploads/2015/07/dr-ian-malcolm-jurassic-park-jeff-goldblum-chaos.jpeg";
+
+		Component jeff1;
+
+		jeff1 = createImage(jeff);
+
+		quizWindow.add(jeff1);
+
+		quizWindow.pack();
+
+		String answer7 = JOptionPane.showInputDialog("And lastly, who plays this character?");
+		if (answer7.equalsIgnoreCase("Jeff Goldblum")) {
+			System.out.println("CORRECT");
+			score = score + 1;
+		} else {
+			System.out.println("INCORRECT");
+		}
+
+		quizWindow.remove(jeff1);
+
+		quizWindow.setVisible(false);
+
+		JOptionPane.showMessageDialog(null, "You earned a total of " + score + "/7 points.");
 
 	}
 
-	private static Component createImage(String imageUrl) throws MalformedURLException {
-		URL url = new URL(imageUrl);
+	private static Component createImage(String bobby) throws MalformedURLException {
+		URL url = new URL(bobby);
 		Icon icon = new ImageIcon(url);
 		JLabel imageLabel = new JLabel(icon);
 		return imageLabel;
@@ -60,10 +124,6 @@ public class PhotoQuiz {
 
 	/* OPTIONAL */
 	// *14. add scoring to your quiz
-	// *15. make something happen when mouse enters image (imageComponent.addMouseMotionListener()) 
+	// *15. make something happen when mouse enters image
+	// (imageComponent.addMouseMotionListener())
 }
-
-
-
-
-
