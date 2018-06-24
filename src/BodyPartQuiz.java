@@ -41,8 +41,32 @@ public class BodyPartQuiz {
 		if (guess.equalsIgnoreCase("Arnold Schwarzenegger")) {
 			JOptionPane.showMessageDialog(null, "Correct!");
 			score = score + 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "Wrong! It's Arnold Schwarzenegger.");
 		}
 		showNextImage();
+		String guess1 = JOptionPane.showInputDialog("Who is this?");
+		if (guess1.equalsIgnoreCase("Leonardo Dicaprio")) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			score = score + 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "Wrong! It's Leonardo Dicaprio.");
+		}
+		showNextImage();
+		String guess2 = JOptionPane.showInputDialog("Who is this?");
+		if (guess2.equalsIgnoreCase("Morgan Freeman")) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			score = score + 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "Wrong! It's Morgan Freeman");
+		}
+		showNextImage();
+		String guess3 = JOptionPane.showInputDialog("Who is this?");
+		if (guess3.equalsIgnoreCase("Jack Black")) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			score = score + 1;
+		}
+		JOptionPane.showMessageDialog(null, "You got "+score+"/4 correct.");
 		// 5. Check their answer. If they guessed correctly:
 
 		// -- Tell them they are right and increase the score by 1
